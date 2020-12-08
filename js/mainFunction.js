@@ -1,30 +1,26 @@
-// Функція на додавання поста
-$('#btnAddEX').click( clickBtnAddEX );
+// Add event for click btn add post
+$(document).on('click', "#btnAddEX", clickBtnAddEX);
 
-// функція редагування поста
-$('#btnModel').click( clickBtnModel );
+// Add event for click btn edit post
+$(document).on('click', "#btnModel", clickBtnModel);
 
-// Коли добавляю нову розмітку поста з класом remEX тоді він не реагує на функції, треба заново переоб*явити функцію для класа
-function updateActions() 
-{
-    // функція на видалення поста
-    $('.remEX').click( clickRemEX );
+ // Add event for click classes remove post
+ $(document).on('click', ".remEX", clickRemEX);
 
-    // функція редагування поста
-    $(".editEX").click( clickEditEX );
-}
+ // Add event for click classes edit post
+ $(document).on('click', ".editEX", clickEditEX);
 
-// Вертає розмітку поста з значеннями
+// Returns markup post
 function getCodePost(_id, _text )
 {
-    var htmlCode =  '<li class=" mb-2 list-group-item">' +
+    var htmlCode =  '<li class=" mb-2 list-group-item" id="li_' + _id+'" >' +
                         '    <div class="container row p-0" id="' + _id + '"> ' +
                         '            <div class="col-9 text-wrap text-break text-muted " > ' +
                                          _text +
                         '           </div> ' +
                         '            <div class="col-3  p-0"> ' +
-                        '                <button type="submit" class=" m-b-1 btn btn-info btn-block editEX" data-toggle="modal" data-target="#exampleModal" >Edit</button> ' + 
-                        '                <button type="submit" class=" m-b-1 btn btn-danger btn-block remEX " >Delete</button> ' +
+                        '                <button type="submit" class=" m-b-1 btn btn-info btn-block editEX " data-toggle="modal" data-target="#exampleModal" >Edit</button> ' + 
+                        '                <button type="submit" class=" m-b-1 btn btn-danger btn-block remEX " onclick="clickRemEX" >Delete</button> ' +
                         '            </div> ' +
                         '    </div> ' +
                         ' </li>';

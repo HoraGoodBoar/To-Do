@@ -1,4 +1,4 @@
-// Після загрузки сторінки загруземо дані
+// Is ready page load data
 $('document').ready( loadData ) ;   
 
 // LoadData
@@ -18,7 +18,6 @@ function loadData()
                 posts[i].id = idEX;
                 $('#exList').append( getCodePost( idEX++, posts[i].text ) ); 
             }
-            updateActions();
         }
     }
     else alert(" localStorage не підтримує ваш браузер ");

@@ -1,4 +1,4 @@
-class post // клас поста
+class Post // Classes the Post
 {
     constructor(_id,_text) {
         this.id = _id;
@@ -6,11 +6,11 @@ class post // клас поста
       }
 }
 
-var posts =new  Array(); // масив постів
+var posts = []; // Array posts
 
-var idEX = 0; // ід поста, якщо я буду ставити ІД по тому, скільки в нас постів є +1, тоді будуть помилки, бо якщо є два поста, ід 0, 1, та я видалю пост з ід 0, то новий пост матиме ід 1 (а у нас пост з таким ід вже є)
+var idEX = 0; // count posts
 
-// Видалення поста з масиву
+// Delete posts from array posts
 function deletePost(_id)
 {
     for(var i=0;i<posts.length;++i)
@@ -23,7 +23,7 @@ function deletePost(_id)
     }
 }
 
-// Повернення поста по ід
+// Get text post by id
 function getPostById(_id)
 {
     for(var i=0;i<posts.length;++i)
@@ -36,7 +36,7 @@ function getPostById(_id)
     return '';
 }
 
-// Редагування поста
+// Edit post
 function editPostById(_id,_text)
 {
     for(var i=0;i<posts.length;++i)
